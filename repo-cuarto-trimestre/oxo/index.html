@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Iniciar Sesión || Activity PHP</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="login-body">
+    <section class="container">
+      <div class="containerImagen">
+        <h2>A la vuelta de tu vida</h2>
+        <img
+          src="data:image/png;base64,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"
+          alt="Imagen de fondo"
+          class="imagenFondo"
+        />
+        
+      </div>
+      <div class="login-card card shadow-sm p-4 ">
+        <h2 class="text-center mb-4">Iniciar Sesión</h2>
+        <form action="login.php" method="POST">
+          <div class="mb-3">
+            <label class="form-label">Cedula de ciudadania</label>
+            <input
+              type="number"
+              name="cedula"
+              class="form-control"
+              placeholder="cedula de cuidadania"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="contrasena" class="form-label"
+              >Nombre del titular</label
+            >
+            <input
+              type="text"
+              name="nombre"
+              class="form-control"
+              placeholder="Nombre del titular"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Numero de llantas</label>
+            <input
+              type="number"
+              name="llantas"
+              class="form-control"
+              placeholder="Numero de llantas"
+              required
+            />
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Ingresar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

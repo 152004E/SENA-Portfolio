@@ -1,0 +1,36 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #15283b;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  
+}
+.containerImagen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100vh;
+
+}
+
+.login-body {
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-card {
+  width: 500px;
+  max-width: 400px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}

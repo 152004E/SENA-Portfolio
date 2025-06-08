@@ -1,0 +1,123 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #555252;
+}
+.todo {
+  display: flex;
+  background-color: #df1f26;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+  border-bottom-left-radius: 60px;
+}
+
+.imagenFondo {
+  background-color: white;
+  border: 1px solid #000;
+  border-radius: 50%;
+  padding: 10px;
+  width: 300px;
+  height: 300px;
+  transition: all 0.3s ease;
+}
+.imagenFondo:hover {
+  background-color: #f1ba1b;
+  border: 1px solid #000000;
+}
+
+.containerImagen {
+  padding: 0 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+}
+.text2 {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.login-body {
+  background-color: #cdd2d8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+  border: 1px solid rgb(210, 210, 210); /* color del borde */
+  padding: 15px; /* espacio para que no se vea pegado */
+  border-radius: 10px; /* redondeo opcional */
+  box-sizing: border-box;
+}
+
+.login-card {
+  display: flex;
+  width: 400px;
+  max-width: 900px;
+  background-color: #959595;
+
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: center;
+}
+.btn {
+  background-color: #df1f26 !important;
+  border: none !important;
+  letter-spacing: 2px;
+}
+.btn:hover {
+  background-color: #c72127 !important;
+}
+
+
+/* <?php
+$mbd = new PDO('mysql:host=sql310.infinityfree.com;dbname=if0_39069624_llantas', 'if0_39069624', "04nYCVX7WvRPmFK");
+$stmt = $mbd->prepare("INSERT INTO cliente(nombre,cedula,llantas,total) VALUES (?,?,?,?)");
+$stmt->execute([$_POST['nombre'], $_POST['cedula'], $_POST['llantas'], $total]);
+$consultar = $mbd->prepare("SELECT * FROM cliente");
+$consultar->execute();
+
+$tabla = $consultar->fetchAll(PDO::FETCH_NUM);
+
+
+echo "
+    <table><tr>   	
+    <th>ID</th>
+    <th>Cedula del titular</th>
+    <th>Número 2</th>
+	<th>Resultado</th>		</tr>";
+foreach ($tabla as $fila) {        //Recorre el arreglo $tabla como FETCH_NUM
+    echo "<tr>		<td>$fila[0]</td>
+            		<td>$fila[1]</td>
+            		<td>$fila[2]</td>
+            		<td>$fila[3]</td>		
+            		<td>$fila[4]</td>		
+
+        </tr>";
+}
+echo "</table>";
+
+
+
+?>*/
