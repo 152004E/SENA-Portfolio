@@ -49,7 +49,7 @@ This repository was created as part of my academic training at **SENA (Servicio 
 Feel free to reach out if you have questions, suggestions, or opportunities:
 
 **Emerson Reyes**  
-Email: *[your-email@example.com]*  
+Email: *reyesemerson643@gmail.com*  
 GitHub: [@152004E](https://github.com/152004E)
 
 ---
