@@ -49,14 +49,14 @@ if ($cuantasCuotas == "6") {
 
     
     $objeto = new Creditos(); // INSTANCIA DE LA CLASE CALCUALDORA
-/*
+
     $RegistrarC = $objeto->Registrar($_POST["NumDocumento"], $_POST["nombre"], $_POST["nombreElectr"], $valor, $cuantasCuotas, $total);
 
     if ($RegistrarC instanceof Exception) {
         $respuestaUser = "Error al registrar los datos, no podemos procesar su solicitud.";
     } else {
         $respuestaUser = "Datos registrados correctamente.";
-    }*/
+    }
    
 
     $tabla = $objeto->Consultar();
