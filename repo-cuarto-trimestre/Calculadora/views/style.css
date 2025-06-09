@@ -58,12 +58,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
 }
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
   width: 90%;
   border: 1px solid rgb(210, 210, 210); /* color del borde */
   padding: 15px; /* espacio para que no se vea pegado */
@@ -87,9 +87,82 @@ form {
   letter-spacing: 2px;
 }
 .btn:hover {
-  background-color: #c72127 !important;
+  background-color: #cc4e52 !important;
 }
 
+@media (max-height: 700px) {
+  body {
+    font-size: 0.9rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 90%;
+  }
+  .container1 h2 {
+    font-size: 1.4rem !important;
+    margin: 3px 0px !important;
+    padding: 0 !important;
+  }
+
+  .container1 h2 {
+    font-size: 1.4rem !important;
+    margin: 3px 0px !important;
+    padding: 0 !important;
+  }
+  .login-card {
+    display: flex;
+    width: 450px;
+    max-width: 900px;
+    background-color: #959595;
+
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+  }
+  .container1 .form-label {
+    margin: 0px !important;
+    font: size 0.3rem !important;
+    padding: 0 !important;
+  }
+}
+@media (max-height: 600px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    width: 90%;
+  }
+
+  .container1 h2 {
+    font-size: 1.4rem !important;
+    margin: 3px 0px !important;
+    padding: 0 !important;
+  }
+  .container1 .border {
+    display: none !important;
+  }
+  .container1 .form-label {
+    margin: 0px !important;
+    font: size 0.3rem !important;
+    padding: 0 !important;
+  }
+  .login-card {
+    display: flex;
+    width: 500px;
+    max-width: 900px;
+    background-color: #959595;
+
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+  }
+}
 
 /* <?php
 $mbd = new PDO('mysql:host=sql310.infinityfree.com;dbname=if0_39069624_llantas', 'if0_39069624', "04nYCVX7WvRPmFK");

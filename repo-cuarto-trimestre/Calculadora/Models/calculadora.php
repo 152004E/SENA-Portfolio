@@ -4,7 +4,7 @@
 
 class Creditos
 {
-    public function Registrar($documento_cliente, $nombre_cliente, $electrodomestico, $valor,$cuantas_cuotas,$total)
+    public function Registrar($documento_cliente, $nombre_cliente, $electrodomestico, $valor, $cuantas_cuotas, $total)
     {
 
 
@@ -12,7 +12,7 @@ class Creditos
         try {
             $mbd = new PDO('mysql:host=localhost;dbname=creditos', 'root', '');
             $stmt = $mbd->prepare("INSERT INTO solicitud(documento_cliente,nombre_cliente,electrodomestico,valor,cuantas_cuotas,total) VALUES (?,?,?,?,?,?)");
-            $stmt->execute([$documento_cliente, $nombre_cliente,  $electrodomestico, $valor,$cuantas_cuotas,$total]);
+            $stmt->execute([$documento_cliente, $nombre_cliente,  $electrodomestico, $valor, $cuantas_cuotas, $total]);
 
             $mbd = null;
             return true;
@@ -24,12 +24,12 @@ class Creditos
     {
 
         try {
-            $mbd = new PDO('mysql:host=localhost;dbname=calculadora', 'root', '');
-            $consultar = $mbd->prepare("SELECT * FROM registro");
+            $mbd = new PDO('mysql:host=localhost;dbname=creditos', 'root', '');
+            $consultar = $mbd->prepare("SELECT * FROM solicitud");
             $consultar->execute();
 
             $tabla = $consultar->fetchAll(PDO::FETCH_NUM);
-             $mbd = null;
+            $mbd = null;
             return $tabla;
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
@@ -43,15 +43,16 @@ class Creditos
             $cEspecifico->execute([$id]);
 
             $tabla = $cEspecifico->fetchAll(PDO::FETCH_NUM);
-             $mbd = null;
+            $mbd = null;
             return $tabla;
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
     }
-    public function Actualizar($id, $num1, $num2, $operacion, $total) {
+    public function Actualizar($id, $num1, $num2, $operacion, $total)
+    {
 
-         try {
+        try {
             $mbd = new PDO('mysql:host=localhost;dbname=calculadora', 'root', '');
             $actualizar = $mbd->prepare("  UPDATE registro set numero1= ?,numero2=?,total=?,operacion=? where id = ?");
             $actualizar->execute([$num1, $num2, $total, $operacion], $id);
@@ -61,11 +62,8 @@ class Creditos
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
-
-
-
     }
-     public function Elimimar($id)
+    public function Elimimar($id)
     {
         try {
             $mbd = new PDO('mysql:host=localhost;dbname=calculadora', 'root', '');
@@ -79,6 +77,3 @@ class Creditos
         }
     }
 }
-
-
-?>
