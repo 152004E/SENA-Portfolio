@@ -1,10 +1,6 @@
  <?php
     include("../views/index.html");
     echo '<link rel="stylesheet" href="../views/style.css" />';
- 
-
-
-
 
     $valor = $_POST['valor'];
 
@@ -22,15 +18,6 @@
     }else{
         $total = "Valor incorrecto";
     }
-
-
-
-
-
-
-
-
-
 
  echo '
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
