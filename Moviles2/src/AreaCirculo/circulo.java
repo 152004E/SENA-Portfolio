@@ -24,6 +24,7 @@ public class circulo {
             area = Math.PI * (radio * radio);
             System.out.println("El area del circulo es : " + area);
         }
+        myScanner.close();
 
     }
 }

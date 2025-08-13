@@ -14,26 +14,17 @@ public class Calculador {
 
     public static void main(String[] args) {
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("""
+      System.out.println("""
+
                            Hola, programador!
                            Este programa es una calculadora.
-                           
-                           Que quieres calcular?
-                           
-                           Las opciones de la calculadora son:
-                           1: Suma
-                           2: Resta
-                           3: Producto
-                           4: Division
-                           5: Potencia
                            """);
+                     
         boolean salir = false;
         while (!salir) {
             System.out.println("""
-                           
-                           
                            Que quieres calcular?
-                           
+    
                            Las opciones de la calculadora son:
                            1: Suma
                            2: Resta
