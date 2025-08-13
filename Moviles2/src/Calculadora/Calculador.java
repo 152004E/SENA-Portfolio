@@ -86,6 +86,7 @@ public class Calculador {
         // secuencia de sentencias.
         // secuencia de sentencias.
         // Default secuencia de sentencias.
+        myScanner.close();
 
     }
 }

@@ -16,12 +16,13 @@ public class circulo {
         Scanner myScanner = new Scanner(System.in);
 
         System.out.println("Calcular el area de un cirlulo");
+        System.out.println("Dame el radio de tu circulo para saber el area");
         double radio = myScanner.nextDouble();
 
         double area;
         if (radio >= 7 && radio <= 52) {
             area = Math.PI * (radio * radio);
-            System.out.println(area);
+            System.out.println("El area del circulo es : " + area);
         }
 
     }

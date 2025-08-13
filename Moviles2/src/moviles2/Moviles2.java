@@ -17,6 +17,7 @@ public class Moviles2 {
      */
     public static void main(String[] args) {
         Scanner myScanner = new Scanner(System.in);
+        
 
         System.out.println(" Escribe 3 numeros mayores a 0");
         String num1 = myScanner.nextLine();
@@ -71,6 +72,9 @@ public class Moviles2 {
         else {
             System.out.println("Valor no valido");
         }
+        myScanner.close();
+
+        System.out.println("Gracias por usar el programa");
     }
 
 }
