@@ -1,4 +1,4 @@
-package calculadoraFiguras;
+package primeraActividad.calculadoraFiguras;
 
 import java.util.Scanner;
 
