@@ -14,63 +14,75 @@ public class Calculador {
 
     public static void main(String[] args) {
         Scanner myScanner = new Scanner(System.in);
-      System.out.println("""
+        System.out.println("""
 
-                           Hola, programador!
-                           Este programa es una calculadora.
-                           """);
-                     
+                Hola, programador!
+                Este programa es una calculadora.
+                """);
+
         boolean salir = false;
         while (!salir) {
+            int numero1, numero2;
             System.out.println("""
-                           Que quieres calcular?
-    
-                           Las opciones de la calculadora son:
-                           1: Suma
-                           2: Resta
-                           3: Producto
-                           4: Division
-                           5: Potencia
-                           """);
+                    Que quieres calcular?
+
+                    Las opciones de la calculadora son:
+                    1: Suma
+                    2: Resta
+                    3: Producto
+                    4: Division
+                    5: Potencia
+                    6: Salir del programa
+                    """);
 
             int opcion = myScanner.nextInt();
-            System.out.println("Primer numero : \n");
-            int numero1 = myScanner.nextInt();
-            System.out.println("Segundo numero : \n");
-            int numero2 = myScanner.nextInt();
 
-            switch (opcion) {
-                case 1 -> {
-                    int suma = numero1 + numero2;
-                    System.out.println("La suma de " + numero1 + " + " + numero2 + " es: " + suma);
-                    break;
-                }
-                case 2 -> {
-                    int resta = numero1 - numero2;
-                    System.out.println("La resta de " + numero1 + " - " + numero2 + " es: " + resta);
-                    break;
-                }
-                case 3 -> {
-                    int multiplicacion = numero1 * numero2;
-                    System.out.println("La multiplicación de " + numero1 + " * " + numero2 + " es: " + multiplicacion);
-                    break;
-                }
-                case 4 -> {
-                    if (numero2 != 0) {
-                        double division = (double) numero1 / numero2;
-                        System.out.println("La división de " + numero1 + " / " + numero2 + " es: " + division);
-                    } else {
-                        System.out.println("Error: No se puede dividir entre cero.");
+            if (opcion == 6) {
+                salir = true;
+                        System.out.println("gracias por usar el programa ");
+                        break;
+            } else {
+
+                System.out.println("Primer numero : \n");
+                numero1 = myScanner.nextInt();
+                System.out.println("Segundo numero : \n");
+                numero2 = myScanner.nextInt();
+
+                switch (opcion) {
+                    case 1 -> {
+                        int suma = numero1 + numero2;
+                        System.out.println("La suma de " + numero1 + " + " + numero2 + " es: " + suma);
+                        break;
                     }
-                    break;
-                }
-                case 5 -> {
-                    int potencia = numero1 % numero2;
-                    System.out.println("El módulo de " + numero1 + " % " + numero2 + " es: " + potencia);
-                    break;
-                }
-                default -> {
-                    System.out.println("Opción no válida.");
+                    case 2 -> {
+                        int resta = numero1 - numero2;
+                        System.out.println("La resta de " + numero1 + " - " + numero2 + " es: " + resta);
+                        break;
+                    }
+                    case 3 -> {
+                        int multiplicacion = numero1 * numero2;
+                        System.out.println(
+                                "La multiplicación de " + numero1 + " * " + numero2 + " es: " + multiplicacion);
+                        break;
+                    }
+                    case 4 -> {
+                        if (numero2 != 0) {
+                            double division = (double) numero1 / numero2;
+                            System.out.println("La división de " + numero1 + " / " + numero2 + " es: " + division);
+                        } else {
+                            System.out.println("Error: No se puede dividir entre cero.");
+                        }
+                        break;
+                    }
+                    case 5 -> {
+                        int potencia = numero1 % numero2;
+                        System.out.println("El módulo de " + numero1 + " % " + numero2 + " es: " + potencia);
+                        break;
+                    }
+                   
+                    default -> {
+                        System.out.println("Opción no válida.");
+                    }
                 }
             }
         }
