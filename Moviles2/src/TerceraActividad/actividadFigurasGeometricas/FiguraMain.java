@@ -16,11 +16,13 @@ public class FiguraMain {
                 new Cuadrado("cuadrado1", 4),
                 new Cuadrado("cuadrado2", 10),
                 new Circulo("circulo 1", 10),
-                new Circulo("circulo 2", 10),
-                new Circulo("circulo 3", 10));
+                new Circulo("circulo 2", 15),
+                new Circulo("circulo 3", 20));
         for (Figura e : lista) {
             System.out.println(e.mostrarInfoFiguras());
         }
 
     }
 }
+
+
