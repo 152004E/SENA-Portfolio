@@ -1,4 +1,4 @@
-package SegundaActividad.NumerosRandom3;
+package    SegundaActividad.MatemáticasyLógica.NumerosRandom3;
 
 public class RandomGenerator {
     public static void main(String[] args) {

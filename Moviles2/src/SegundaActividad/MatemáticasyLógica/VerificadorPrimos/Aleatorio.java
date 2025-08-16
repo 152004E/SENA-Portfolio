@@ -1,4 +1,4 @@
-package SegundaActividad.VerificadorPrimos;
+package SegundaActividad.MatemáticasyLógica.VerificadorPrimos;
 
 public class Aleatorio {
     public void numeroRandomValidar() {

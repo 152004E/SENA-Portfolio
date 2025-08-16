@@ -1,4 +1,4 @@
-package SegundaActividad.VerificadorPrimos;
+package SegundaActividad.MatemáticasyLógica.VerificadorPrimos;
 
 import java.util.Scanner;
 

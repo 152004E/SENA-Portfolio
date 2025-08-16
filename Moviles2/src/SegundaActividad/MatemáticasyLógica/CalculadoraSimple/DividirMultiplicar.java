@@ -1,4 +1,4 @@
-package SegundaActividad.CalculadoraSimple;
+package SegundaActividad.MatemáticasyLógica.CalculadoraSimple;
 import java.util.Scanner;
 
 public class DividirMultiplicar {

@@ -1,4 +1,4 @@
-package SegundaActividad.CalculadoraSimple;
+package SegundaActividad.MatemáticasyLógica.CalculadoraSimple;
 
 public class Metodos {
     private int numero1;
