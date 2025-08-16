@@ -8,11 +8,14 @@ public class VerificadorPrimos {
                 -------------------------------------------------------------
                 Este programa verifica numeros primos.
                 """);
-        // Return numeroValidar = new Return();
-        // numeroValidar.leerNumero();
+        Return numeroValidar = new Return();
+        numeroValidar.leerNumero();
 
-        // System.out.println(numeroValidar.verificaNumero());
-
+        System.out.println(numeroValidar.verificaNumero());
+         System.out.println("""
+                -------------------------------------------------------------
+                
+                """);
         Aleatorio nuAleatorio = new Aleatorio();
         nuAleatorio.numeroRandomValidar();
         
