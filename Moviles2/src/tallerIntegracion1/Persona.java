@@ -9,7 +9,7 @@ abstract class Persona {
         this.apellido = apellido;
 
     }
-    public void mostrarCarrera(){}
+    
     public void mostrarInformacion() {
 
         System.out.println("Hola " + nombre + " " + apellido + " como estas?");
