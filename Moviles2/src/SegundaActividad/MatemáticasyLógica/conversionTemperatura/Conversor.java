@@ -1,4 +1,4 @@
-package SegundaActividad.MatemáticasyLógica.conversionTemperatura;
+package MatemáticasyLógica.conversionTemperatura;
 
 public class Conversor {
     public static void main(String[] args) {

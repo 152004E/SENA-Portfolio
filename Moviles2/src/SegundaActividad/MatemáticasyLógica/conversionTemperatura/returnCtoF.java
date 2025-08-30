@@ -1,4 +1,4 @@
-package SegundaActividad.MatemáticasyLógica.conversionTemperatura;
+package MatemáticasyLógica.conversionTemperatura;
 
 import java.util.Scanner;
 

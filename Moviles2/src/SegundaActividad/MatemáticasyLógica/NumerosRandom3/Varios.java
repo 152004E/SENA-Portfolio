@@ -1,4 +1,4 @@
-package SegundaActividad.MatemáticasyLógica.NumerosRandom3;
+package MatemáticasyLógica.NumerosRandom3;
 
 public class Varios {
 

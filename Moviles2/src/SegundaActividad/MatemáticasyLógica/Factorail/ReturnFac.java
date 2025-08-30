@@ -1,4 +1,4 @@
-package SegundaActividad.MatemáticasyLógica.Factorail;
+package MatemáticasyLógica.Factorail;
 
 import java.util.Scanner;
 

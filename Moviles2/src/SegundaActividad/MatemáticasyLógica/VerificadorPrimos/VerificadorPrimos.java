@@ -1,4 +1,4 @@
-package SegundaActividad.MatemáticasyLógica.VerificadorPrimos;
+package MatemáticasyLógica.VerificadorPrimos;
 
 public class VerificadorPrimos {
     public static void main(String[] args) {

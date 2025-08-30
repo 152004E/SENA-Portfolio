@@ -1,4 +1,4 @@
-package SegundaActividad.MatemáticasyLógica.conversionTemperatura;
+package MatemáticasyLógica.conversionTemperatura;
 
 public class ValoresFtoC {
     private float Fahrenheit;

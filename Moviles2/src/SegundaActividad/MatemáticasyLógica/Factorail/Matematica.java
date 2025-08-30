@@ -1,4 +1,4 @@
-package SegundaActividad.MatemáticasyLógica.Factorail;
+package MatemáticasyLógica.Factorail;
 
 public class Matematica {
     public static void main(String[] args) {
