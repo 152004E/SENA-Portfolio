@@ -17,11 +17,11 @@ export default function app() {
 
     const cargarTarea = async () => {
         try {
-            const response = await fetch("http://192.168.1.7:3000/tareas1")
+            const response = await fetch("http://10.1.172.248:8081/tareas1")
             const data = await response.json()
             setTareas1(data)
         } catch (error) {
-            console.error("error", error)
+            console.error("error", error)    
         }
     }
 
@@ -29,7 +29,7 @@ export default function app() {
         if (!nuevaTarea.trim()) return;
 
         try {
-            const response = await fetch("http://192.168.1.7:3000/tareas1", {
+            const response = await fetch("http://10.1.172.248:8081/tareas1", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify({ titulo: nuevaTarea, estado: "pendiente" }),
@@ -62,7 +62,7 @@ export default function app() {
         try {
 
             const nuevoEstado = estado === "pendiente" ? "competada" : "pendiente";
-            const response = await fetch(`http://192.168.1.7:3000/tareas1/${id}`, {
+            const response = await fetch(`http://10.1.172.248:8081/tareas1/${id}`, {
                 method: "PUT",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify({ estado: nuevoEstado }),
