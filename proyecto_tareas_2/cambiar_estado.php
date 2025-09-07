@@ -12,5 +12,5 @@ if ($conexion->query($sql)) {
 } else {
     echo json_encode(["success" => false, "message" => "Error al cambiar el estado de la tarea: " . $conexion->error]);
 }
-
+ 
 ?>
