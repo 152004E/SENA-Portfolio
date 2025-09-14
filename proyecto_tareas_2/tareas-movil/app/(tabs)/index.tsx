@@ -9,7 +9,7 @@ import {
 } from "../../api";
 
 export default function HomeScreen() {
-  const [tareas, setTareas] = useState<{ id: number; titulo: string; estado: string }[]>([]);
+  const [tareas1, setTareas] = useState<{ id: number; titulo: string; estado: string }[]>([]);
   const [nuevaTarea, setNuevaTarea] = useState("");
 
   // 🛠 Cargar tareas al iniciar
@@ -100,7 +100,7 @@ export default function HomeScreen() {
 
       <Button title="Agregar Tarea" onPress={agregarTarea} />
 
-      {tareas.length === 0 ? (
+      {tareas1.length === 0 ? (
         <Text
           style={{
             marginTop: 20,
@@ -113,7 +113,7 @@ export default function HomeScreen() {
         </Text>
       ) : (
         <FlatList
-          data={tareas}
+          data={tareas1}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
             <View

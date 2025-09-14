@@ -17,7 +17,7 @@ export default function app() {
 
     const cargarTarea = async () => {
         try {
-            const response = await fetch("http://10.1.172.248:8081/tareas1")
+            const response = await fetch("http://10.194.133.148:8081/tareas1")
             const data = await response.json()
             setTareas1(data)
         } catch (error) {
@@ -29,7 +29,7 @@ export default function app() {
         if (!nuevaTarea.trim()) return;
 
         try {
-            const response = await fetch("http://10.1.172.248:8081/tareas1", {
+            const response = await fetch("http://10.194.133.148:8081/tareas1", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify({ titulo: nuevaTarea, estado: "pendiente" }),
@@ -87,7 +87,7 @@ export default function app() {
             />
             <button title="Agregar" onPrees={agregarTareas} />
             <FlatList
-                data={tareas}
+                data={tareas1}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
                     <view>

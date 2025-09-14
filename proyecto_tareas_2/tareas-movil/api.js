@@ -1,7 +1,7 @@
 import axios from "axios";
 import Constant from "expo-constants";
 
-let API_URL = "http://10.1.167.1.6/PROYECTO_TAREAS_2";
+let API_URL = "http://10.194.133.148/proyecto_tareas_2";
 
 try {
     //para expo sdk
@@ -12,7 +12,7 @@ try {
 
     if (debuggerhost) {
         const ip = debuggerhost.split(";").shift();
-        API_URL = `http://${ip}/PROYECTO_TAREAS_2`;
+        API_URL = `http://${ip}/tareas-movil`;
     }
 } catch (error) {
     console.warn("No se puede cargar la de Expo, usando el valor pro defecto")
