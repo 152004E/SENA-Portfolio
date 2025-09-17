@@ -27,5 +27,5 @@ public class Editorial {
     private String nombreEditorial = "sin Nombre";
 
     @OneToMany(mappedBy = "editorial", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Libro> libros;
+    private Set<Libro> coleccionDeLibros;
 }
