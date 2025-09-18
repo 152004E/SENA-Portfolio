@@ -1,6 +1,6 @@
 package com.example.BibliotecaBarrial.Entity;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import com.example.BibliotecaBarrial.Enum.EstadoPrestamo;
 
@@ -27,15 +27,15 @@ public class Prestamo {
     @Column(name = "idPrestamo", nullable = false, unique = true, updatable = false)
     private long idPrestamo;
 
-    @Column(name = "fechaSalida", nullable = false, length = 50)
-    private Date fechaSalida;
+    @Column(name = "fechaSalida", nullable = false)
+    private LocalDate  fechaSalida;
 
-    @Column(name = "fechaDevolucion", nullable = false, length = 50)
-    private Date fechaDevolucion;
+    @Column(name = "fechaDevolucion", nullable = false)
+    private LocalDate  fechaDevolucion;
 
-    @Column(name = "estadoPrestamo", nullable = false, length = 50)
+    @Column(name = "estadoPrestamo", nullable = false)
     @Enumerated(EnumType.STRING) // 👈 Muy importante: guarda el texto, no el índice
-    private EstadoPrestamo estadoPrestamo;
+    private EstadoPrestamo estadoPrestamo = EstadoPrestamo.ACTIVO;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "idLibro", nullable = false) // FK hacia la tabla libro

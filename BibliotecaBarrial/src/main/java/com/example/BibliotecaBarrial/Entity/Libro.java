@@ -37,6 +37,9 @@ public class Libro {
     @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<LibroAutor> coleccionDeLibrosAutor;
 
+    @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Prestamo> coleccionDePrestamos;
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "idEditorial", nullable = false) // FK hacia la tabla editorial
     private Editorial editorial;
