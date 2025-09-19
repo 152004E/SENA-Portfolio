@@ -7,5 +7,5 @@ import com.example.BibliotecaBarrial.Entity.Editorial;
 
 @Repository
 public interface EditorialRepository extends JpaRepository<Editorial, Long> {
-
+Editorial findByNombreEditorial(String nombreEditorial);
 }
