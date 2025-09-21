@@ -1,13 +1,6 @@
 {
+  "compilerOptions": {},
   "extends": "expo/tsconfig.base",
-  "compilerOptions": {
-    "jsx": "react-native",
-    "strict": true,
-    "types": ["hammerjs"], // 👈 AGREGA ESTO
-    "paths": {
-      "@/*": ["./*"]
-    }
-  },
   "include": [
     "**/*.ts",
     "**/*.tsx",
