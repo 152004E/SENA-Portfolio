@@ -5,7 +5,7 @@ $servidor = "localhost";
 $usuario = "root";
 $password = "";
 $base_Datos = "tareas_db";
-$puerto = 33065; // Agregando el puerto personalizado
+$puerto = 33065;
 
 $conexion = new mysqli($servidor, $usuario, $password, $base_Datos, $puerto);
 
