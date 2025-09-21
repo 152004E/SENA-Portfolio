@@ -14,7 +14,7 @@ if ($resultado) {
     echo json_encode($tareas, JSON_UNESCAPED_UNICODE);
 } else {
     echo json_encode([
-        "success" => true,
+        "success" => false,
         "message" => "Tarea creada exitosamente" . $conexion->error
     ]);
 }
@@ -23,4 +23,4 @@ if ($resultado) {
 //     $tareas[] = $fila;
 // }
 
-echo json_encode($tareas);
+

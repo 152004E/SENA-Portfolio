@@ -6,7 +6,7 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Content-Type: application/json; charset=UTF-8");
 
 $datos = json_decode(file_get_contents("php://input"), true);
-if(!$datos || !isset($datos['id']) || !isset($datos['estado'])) {
+if (!$datos || !isset($datos['id']) || !isset($datos['estado'])) {
     echo json_encode([
         'success' => false,
         'message' => 'Datos inválidos.'
@@ -14,10 +14,10 @@ if(!$datos || !isset($datos['id']) || !isset($datos['estado'])) {
     exit;
 }
 $id = intval($datos['id']);
-$estado= $datos['estado'] === 'pendiente' ? 'completado' : 'pendiente';
+$estado = $datos['estado'] === 'pendiente' ? 'completado' : 'pendiente';
 
 $sql = "UPDATE tareas1 SET estado = '$estado' WHERE id = $id";
-if($conexion->query($sql)){
+if ($conexion->query($sql)) {
     echo json_encode([
         'success' => true,
         'message' => 'Estado cambiado correctamente.'
@@ -28,7 +28,7 @@ if($conexion->query($sql)){
         'message' => 'Error al cambiar el estado: ' . $conexion->error
     ]);
 }
- 
+
 ?>
 
 

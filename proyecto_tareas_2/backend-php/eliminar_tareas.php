@@ -14,7 +14,7 @@ if ($id <= 0) {
     exit;
 }
 $stmt = $conexion->prepare("DELETE FROM tareas1 WHERE id = ?");
-$stmt->bind_param("i", $titulo);
+$stmt->bind_param("i", $id);
 
 if($stmt->execute()) {
     echo json_encode([

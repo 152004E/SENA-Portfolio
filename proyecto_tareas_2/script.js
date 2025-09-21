@@ -4,7 +4,7 @@ document.getElementById("btn-agregar").addEventListener("click", () => {
   const titulo = document.getElementById("nueva-tarea").value.trim();
 
   if (titulo !== "") {
-    fetch("crear_tareas.php", {
+    fetch("backend-php/crear_tareas.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ titulo: titulo }),
@@ -24,7 +24,7 @@ document.getElementById("btn-agregar").addEventListener("click", () => {
 });
 
 function listarTareas() {
-  fetch("listar_tareas.php")
+  fetch("backend-php/listar_tareas.php")
     .then((res) => res.json())
     .then((tareas) => {
       const contenedor = document.getElementById("lista-tareas");
@@ -50,7 +50,7 @@ function listarTareas() {
 
 function eliminarTarea(id) {
   if (confirm("¿Seguro que quieres eliminar esta tarea?")) {
-    fetch("eliminar_tareas.php", {
+    fetch("backend-php/eliminar_tareas.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id: id }),
@@ -67,14 +67,14 @@ function eliminarTarea(id) {
 }
 
 function cambiarEstado(id, estado) {
-  fetch("cambiar_estado.php", {
+  fetch("backend-php/cambiar_estado.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ id: id, estado: estado }),
   })
     .then((res) => res.json())
     .then((data) => {
-      if (data) {
+      if (data.success) {
         listarTareas();
       } else {
         alert(data.message);
