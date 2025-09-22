@@ -1,5 +1,8 @@
 <?php
-
+header("access-control-allow-origin: *");
+header("access-control-allow-headers: content-type");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Content-Type: application/json; charset=UTF-8");
 include "conexion.php";
 $dato = json_decode(file_get_contents("php://input"), true);
 $id = intval($dato['id']);

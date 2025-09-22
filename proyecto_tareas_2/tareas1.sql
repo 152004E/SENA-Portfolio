@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:33065
--- Tiempo de generación: 22-09-2025 a las 05:23:50
+-- Tiempo de generación: 22-09-2025 a las 05:22:37
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,14 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `tareas_db`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tareas`
---
--- Error leyendo la estructura de la tabla tareas_db.tareas: #1932 - Table &#039;tareas_db.tareas&#039; doesn&#039;t exist in engine
--- Error leyendo datos de la tabla tareas_db.tareas: #1064 - Algo está equivocado en su sintax cerca &#039;FROM `tareas_db`.`tareas`&#039; en la linea 1
 
 -- --------------------------------------------------------
 
