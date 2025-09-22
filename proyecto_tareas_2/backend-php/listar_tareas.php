@@ -19,8 +19,4 @@ if ($resultado) {
     ]);
 }
 
-// while ($fila = $resultado->fetch_assoc()) {
-//     $tareas[] = $fila;
-// }
-
 
