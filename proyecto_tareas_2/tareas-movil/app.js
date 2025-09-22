@@ -17,7 +17,7 @@ export default function app() {
 
     const cargarTarea = async () => {
         try {
-            const response = await fetch("http://10.194.133.148:8081/tareas1")
+            const response = await fetch("http://192.168.1.18:8081/SENA-Portfolio/proyecto_tareas_2/backend-php/listar_tareas.php");
             const data = await response.json()
             setTareas1(data)
         } catch (error) {
@@ -29,7 +29,7 @@ export default function app() {
         if (!nuevaTarea.trim()) return;
 
         try {
-            const response = await fetch("http://10.194.133.148:8081/tareas1", {
+            const response = await fetch("http://192.168.1.18:8081/SENA-Portfolio/proyecto_tareas_2/backend-php/crear_tareas.php", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify({ titulo: nuevaTarea, estado: "pendiente" }),
