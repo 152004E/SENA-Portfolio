@@ -12,22 +12,28 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
     />
 
+    <!--font-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--favicon-->
     <link
       rel="shortcut icon"
       href="./image/DentalSoft.png"
       type="image/x-icon"
     />
   </head>
-  <body>
+  <body class="font-Outfit transition-all !duration-[3s]">
     <!-- bg-[#d5d5d5] -->
     <section
       class="bg-[#070707] w-screen h-screen flex justify-center items-center"
     >
       <!-- bg-[#F8F9FA] -->
       <div
-        class="bg-[#4d4d4d] w-[1300px] h-[800px] rounded-2xl overflow-hidden"
+        class="bg-[#4d4d4d] flex w-[1300px] h-[800px] rounded-2xl overflow-hidden"
       >
-        <div class="bg-white w-[300px] h-full">
+        <div class="bg-white w-[300px] h-full border-r-2 border-gray-200">
           <div
             class="flex justify-center items-center border-b-2 border-gray-200"
           >
@@ -37,28 +43,235 @@
               alt="Imagen de la empresa"
             />
           </div>
-          <div class="flex flex-col ml-4">
+          <div class="flex flex-col ml-4 mr-3">
             <div class="links">
               <span class="material-symbols-outlined">dashboard</span>
-              <a href="#">Panel</a>
+              <a class="w-full h-full" href="#">Panel</a>
             </div>
             <div class="links">
               <span class="material-symbols-outlined">calendar_month</span>
-              <a href="#">Citas</a>
+              <a class="w-full h-full" href="#">Citas</a>
             </div>
             <div class="links">
               <span class="material-symbols-outlined">person</span>
-              <a href="#">Pacientes</a>
+              <a class="w-full h-full" href="#">Pacientes</a>
             </div>
             <div class="links">
               <span class="material-symbols-outlined">receipt_long</span>
-              <a href="#">Facturación</a>
+              <a class="w-full h-full" href="#">Facturación</a>
             </div>
             <div class="links">
               <span class="material-symbols-outlined">bar_chart</span>
-              <a href="#">Informes</a>
+              <a class="w-full h-full" href="#">Informes</a>
             </div>
           </div>
+        </div>
+
+        <!--segundo espacio-->
+
+        <div class="bg-white w-full h-full">
+          <div class="flex items-center border-b-2 border-gray-200">
+            <h2 class="text-3xl tracking-wide my-[14px] ml-3 uppercase">
+              Gestion de Pacientes
+            </h2>
+          </div>
+          <div class="flex flex-col ml-4">
+            <div class="max-w-7xl mx-auto p-6">
+              <!-- Barra de búsqueda y botones -->
+              <div
+                class="flex flex-wrap gap-2 items-center justify-between mb-4"
+              >
+                <!-- Buscador -->
+                <div class="relative flex items-center">
+                  <span
+                    class="material-symbols-outlined absolute left-3 text-gray-400"
+                    >search</span
+                  >
+                  <input
+                    type="text"
+                    placeholder="Buscar por nombre, documento o teléfono"
+                    class="pl-10 pr-4 py-2 border rounded-md focus:ring-1 focus:ring-[#0da5d6] focus:outline-none w-95 text-sm transition-all !duration-[0.3s]"
+                  />
+                </div>
+
+                <!-- Filtros -->
+                <div class="flex gap-2 ml-30">
+                  <button
+                    class="px-4 py-2 border rounded-md bg-white hover:bg-gray-500 hover:text-white cursor-pointer transition-all duration-[1s] hover:scale-[1.06]"
+                  >
+                    Todos los Pacientes
+                  </button>
+
+                  <!-- Botón agregar -->
+                  <button
+                    onclick="document.getElementById('modalCrearUsuario').classList.remove('hidden')"
+                    class="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-gradient-to-r hover:from-[#0da5d6] hover:to-[#00f2fe] cursor-pointer transition-all duration-900 hover:scale-[1.06]"
+                  >
+                    <span class="material-symbols-outlined">add</span>
+                    Agregar Nuevo Paciente
+                  </button>
+                </div>
+              </div>
+
+              <!-- Tabla -->
+              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <table class="w-full border-collapse">
+                  <thead class="bg-blue-500">
+                    <tr>
+                      <th
+                        class="px-4 py-2 text-left text-sm font-medium text-white"
+                      >
+                        NOMBRE
+                      </th>
+                      <th
+                        class="px-4 py-2 text-left text-sm font-medium text-white"
+                      >
+                        DOCUMENTO
+                      </th>
+                      <th
+                        class="px-4 py-2 text-left text-sm font-medium text-white"
+                      >
+                        TELÉFONO
+                      </th>
+                      <th
+                        class="px-4 py-2 text-left text-sm font-medium text-white"
+                      >
+                        CORREO ELECTRÓNICO
+                      </th>
+                      <th
+                        class="px-4 py-2 text-center text-sm font-medium text-white"
+                      >
+                        ACCIONES
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y">
+                    <tr class="hover:bg-[#f3f3f3]">
+                      <td class="px-4 py-2">Sofia Clark</td>
+                      <td class="px-4 py-2">12345678A</td>
+                      <td class="px-4 py-2">555-123-4567</td>
+                      <td class="px-4 py-2">sofia.clark@email.com</td>
+                      <td class="px-4 py-2 flex justify-center gap-3">
+                        <span
+                          class="material-symbols-outlined text-blue-500 cursor-pointer"
+                          >edit</span
+                        >
+                        <span
+                          class="material-symbols-outlined text-red-500 cursor-pointer"
+                          >delete</span
+                        >
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-[#f3f3f3]">
+                      <td class="px-4 py-2">Liam Walker</td>
+                      <td class="px-4 py-2">87654321B</td>
+                      <td class="px-4 py-2">555-987-6543</td>
+                      <td class="px-4 py-2">liam.walker@email.com</td>
+                      <td class="px-4 py-2 flex justify-center gap-3">
+                        <span
+                          class="material-symbols-outlined text-blue-500 cursor-pointer"
+                          >edit</span
+                        >
+                        <span
+                          class="material-symbols-outlined text-red-500 cursor-pointer"
+                          >delete</span
+                        >
+                      </td>
+                    </tr>
+                    <!-- Puedes duplicar las filas según lo necesites -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal -->
+      <div
+        id="modalCrearUsuario"
+        class="hidden fixed inset-0  bg-opacity-50 flex items-center justify-center z-50"
+      >
+        <div class="bg-white rounded-xl shadow-lg w-full max-w-lg p-6 relative">
+          <!-- Cerrar modal -->
+          <button
+            onclick="document.getElementById('modalCrearUsuario').classList.add('hidden')"
+            class="absolute top-3 right-3 text-gray-500 hover:text-blue-500 cursor-pointer transition-all !duration-[1s]  "
+          >
+            ✖
+          </button>
+
+          <!-- Título -->
+          <h2 class="text-xl font-bold mb-4 text-gray-700">
+            Crear Nuevo Usuario
+          </h2>
+
+          <!-- Formulario -->
+          <form class="space-y-4">
+            <!-- Nombre -->
+            <div>
+              <label class="block text-sm font-medium text-gray-600"
+                >Nombre completo</label
+              >
+              <input
+                type="text"
+                placeholder="Ej: Juan Pérez"
+                class="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              />
+            </div>
+
+            <!-- Documento -->
+            <div>
+              <label class="block text-sm font-medium text-gray-600"
+                >Documento</label
+              >
+              <input
+                type="text"
+                placeholder="Número de documento"
+                class="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              />
+            </div>
+
+            <!-- Teléfono -->
+            <div>
+              <label class="block text-sm font-medium text-gray-600"
+                >Teléfono</label
+              >
+              <input
+                type="tel"
+                placeholder="Ej: 3001234567"
+                class="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              />
+            </div>
+
+            <!-- Correo -->
+            <div>
+              <label class="block text-sm font-medium text-gray-600"
+                >Correo electrónico</label
+              >
+              <input
+                type="email"
+                placeholder="correo@ejemplo.com"
+                class="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              />
+            </div>
+
+            <!-- Botones -->
+            <div class="flex justify-end gap-3 pt-4">
+              <button
+                type="button"
+                onclick="document.getElementById('modalCrearUsuario').classList.add('hidden')"
+                class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-500  hover:text-white cursor-pointer transition-all duration-[1s] hover:scale-[1.06]"
+              >
+                Cancelar
+              </button>
+              <button
+                type="submit"
+                class="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-gradient-to-r hover:from-[#0da5d6] hover:to-[#00f2fe] cursor-pointer transition-all duration-900 hover:scale-[1.06]"
+              >
+                Guardar
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
