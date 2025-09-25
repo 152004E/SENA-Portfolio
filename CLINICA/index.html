@@ -27,7 +27,7 @@
   <body class="font-Outfit transition-all !duration-[3s]">
     <!-- bg-[#d5d5d5] -->
     <section
-      class="bg-[#070707] w-screen h-screen flex justify-center items-center"
+      class="bg-gray-900 w-screen h-screen flex justify-center items-center"
     >
       <!-- bg-[#F8F9FA] -->
       <div
@@ -104,7 +104,7 @@
 
                   <!-- Botón agregar -->
                   <button
-                    onclick="document.getElementById('modalCrearUsuario').classList.remove('hidden')"
+                    onclick="abrirModal()"
                     class="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-gradient-to-r hover:from-[#0da5d6] hover:to-[#00f2fe] cursor-pointer transition-all duration-900 hover:scale-[1.06]"
                   >
                     <span class="material-symbols-outlined">add</span>
@@ -189,13 +189,16 @@
       <!-- Modal -->
       <div
         id="modalCrearUsuario"
-        class="hidden fixed inset-0  bg-opacity-50 flex items-center justify-center z-50"
+        class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50"
       >
-        <div class="bg-white rounded-xl shadow-lg w-full max-w-lg p-6 relative">
+        <div
+          id="contenidoModal"
+          class="bg-white rounded-xl shadow-lg w-full max-w-lg p-6 relative transform scale-95 opacity-0 transition-all duration-500"
+        >
           <!-- Cerrar modal -->
           <button
-            onclick="document.getElementById('modalCrearUsuario').classList.add('hidden')"
-            class="absolute top-3 right-3 text-gray-500 hover:text-blue-500 cursor-pointer transition-all !duration-[1s]  "
+            onclick="cerrarModal()"
+            class="absolute top-3 right-3 text-gray-500 hover:text-blue-500 cursor-pointer transition-all duration-300"
           >
             ✖
           </button>
@@ -214,6 +217,7 @@
               >
               <input
                 type="text"
+                id="nombre"
                 placeholder="Ej: Juan Pérez"
                 class="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
@@ -226,6 +230,7 @@
               >
               <input
                 type="text"
+                id="documento"
                 placeholder="Número de documento"
                 class="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
@@ -239,6 +244,7 @@
               <input
                 type="tel"
                 placeholder="Ej: 3001234567"
+                id="telefono"
                 class="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
             </div>
@@ -250,6 +256,7 @@
               >
               <input
                 type="email"
+                id="correo"
                 placeholder="correo@ejemplo.com"
                 class="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
@@ -259,14 +266,14 @@
             <div class="flex justify-end gap-3 pt-4">
               <button
                 type="button"
-                onclick="document.getElementById('modalCrearUsuario').classList.add('hidden')"
-                class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-500  hover:text-white cursor-pointer transition-all duration-[1s] hover:scale-[1.06]"
+                onclick="cerrarModal()"
+                class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-500 hover:text-white cursor-pointer transition-all duration-300 hover:scale-[1.06]"
               >
                 Cancelar
               </button>
               <button
                 type="submit"
-                class="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-gradient-to-r hover:from-[#0da5d6] hover:to-[#00f2fe] cursor-pointer transition-all duration-900 hover:scale-[1.06]"
+                class="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-gradient-to-r hover:from-[#0da5d6] hover:to-[#00f2fe] cursor-pointer transition-all duration-500 hover:scale-[1.06]"
               >
                 Guardar
               </button>
@@ -275,5 +282,6 @@
         </div>
       </div>
     </section>
+    <script src="Script.js"></script>
   </body>
 </html>
