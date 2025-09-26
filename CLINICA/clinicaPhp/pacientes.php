@@ -44,7 +44,7 @@ if ($method === "GET") {
     $result = $conexion->query("SELECT * FROM pacientes");
     $pacientes = [];
     while ($row = $result->fetch_assoc()) {
-        $pacientes = $row;
+        $pacientes[] = $row;
     }
 
     echo json_encode($pacientes);
@@ -53,7 +53,7 @@ if ($method === "GET") {
 
 
 if ($method === "PUT") {
-    $data = json_encode(file_get_contents("php://input"), true);
+    $data = json_decode(file_get_contents("php://input"), true);
 
     $id = $data["id"];
     $nombre = $data["nombre"];
@@ -61,7 +61,7 @@ if ($method === "PUT") {
     $telefono = $data["telefono"];
     $correo = $data["correo"];
 
-    $sql = "UPDATE pacientes SET nombre='$nombre',documento='$documento',telefono=$telefono', correo='$correo' WHERE id=$id";
+    $sql = "UPDATE pacientes SET nombre='$nombre',documento='$documento',telefono='$telefono', correo='$correo' WHERE id=$id";
 
 
     if ($conexion->query($sql) === true) {
@@ -79,7 +79,7 @@ if ($method === "PUT") {
 }
 
 if ($method === "DELETE") {
-    $data = json_encode(file_get_contents("php://input"), true);
+    $data = json_decode(file_get_contents("php://input"), true);
     $id = $data["id"];
     $sql = "DELETE FROM pacientes WHERE id=$id";
 

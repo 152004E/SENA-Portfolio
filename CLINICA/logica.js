@@ -31,13 +31,102 @@ document
       alert("No se pudo conectar al servidor");
     }
   });
-
+cargarPacientes();
 async function cargarPacientes() {
+  try {
+    const response = await fetch("./clinicaPhp/pacientes.php");
+    const pacientes = await response.json();
+
+    console.log("Pacientes", pacientes);
+
+    const tbody = document.querySelector("table tbody");
+    tbody.innerHTML = "";
+
+    pacientes.forEach((p) => {
+      const tr = document.createElement("tr");
+      tr.classList.add("hover:bg-[#f3f3f3]");
+
+      tr.innerHTML = `
+        <td class="px-2 py-2">${p.id}</td>
+        <td class="px-4 py-2">${p.nombre}</td>
+        <td class="px-4 py-2">${p.documento}</td>
+        <td class="px-4 py-2">${p.telefono}</td>
+        <td class="px-4 py-2">${p.correo}</td>
+        <td class="px-4 py-2 flex justify-center gap-3">
+          <span class="material-symbols-outlined text-blue-500 cursor-pointer" onclick="editarPaciente(${p.id})">
+            edit
+          </span>
+          <span class="material-symbols-outlined text-red-500 cursor-pointer" onclick="eliminarPaciente(${p.id})">
+            delete
+          </span>
+        </td>
+    `;
+
+      tbody.appendChild(tr);
+    });
+  } catch (error) {
+    console.error(error);
+    alert("No se pudo conectar al servidor");
+  }
+}
+
+async function editarPaciente(id) {
   const response = await fetch("./clinicaPhp/pacientes.php");
   const pacientes = await response.json();
+  const paciente = pacientes.find((p) => p.id == id);
 
-  console.log("Pacientes", pacientes);
+  if (!paciente) return alert("Paciente no encontrado");
 
-  const tbody = document.querySelector("table tbody");
-  tbody.innerHTML = "";
+  // 2️⃣ Pedir nuevos valores (puedes usar un formulario real, esto es solo ejemplo rápido)
+  const nuevoNombre = prompt("Nombre:", paciente.nombre);
+  const nuevoDocumento = prompt("Documento:", paciente.documento);
+  const nuevoTelefono = prompt("Teléfono:", paciente.telefono);
+  const nuevoCorreo = prompt("Correo:", paciente.correo);
+
+  if (!nuevoNombre || !nuevoDocumento || !nuevoTelefono || !nuevoCorreo) return;
+
+  const result = await fetch("./clinicaPhp/pacientes.php", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      id,
+      nombre: nuevoNombre,
+      documento: nuevoDocumento,
+      telefono: nuevoTelefono,
+      correo: nuevoCorreo,
+    }),
+  });
+  const data = await result.json();
+  console.log(data);
+
+  if (data.success) {
+    alert("Datos Actualizados");
+    cargarPacientes();
+  } else {
+    alert("Error al actualizar el paciente");
+  }
+}
+
+async function eliminarPaciente(id) {
+  if (!confirm("Seguro que deseas eliminar este paciente?"));
+  try {
+    const response = await fetch("./clinicaPhp/pacientes.php", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: id }),
+    });
+
+    const result = await response.json();
+    console.log("Eliminar :", result);
+
+    if (result.success) {
+      alert("Paciente eliminado con exito");
+      cargarPacientes();
+    } else {
+      alert("El paciente no se puedo eliminar", result.error);
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Error al conectar con el servidor");
+  }
 }

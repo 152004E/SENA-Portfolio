@@ -97,6 +97,7 @@
                 <!-- Filtros -->
                 <div class="flex gap-2 ml-30">
                   <button
+                    onclick="cargarPacientes()"
                     class="px-4 py-2 border rounded-md bg-white hover:bg-gray-500 hover:text-white cursor-pointer transition-all duration-[1s] hover:scale-[1.06]"
                   >
                     Todos los Pacientes
@@ -111,14 +112,20 @@
                     Agregar Nuevo Paciente
                   </button>
                 </div>
-              </div>
+              </div>    
 
               <!-- Tabla -->
-              <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <table class="w-full border-collapse">
+              <div
+                class="bg-white max-h-150 overflow-y-auto rounded-xl shadow-inner"
+              >
+                <table class="w-full text-left">
                   <thead class="bg-blue-500">
                     <tr>
-                      <th class="px-4 py-2 text-left text-sm font-medium text-white">ID</th>
+                      <th
+                        class="px-2   py-2 text-center  text-sm font-medium text-white"
+                      >
+                        ID
+                      </th>
                       <th
                         class="px-4 py-2 text-left text-sm font-medium text-white"
                       >
@@ -146,43 +153,7 @@
                       </th>
                     </tr>
                   </thead>
-                  <tbody class="divide-y">
-                    <!-- <tr class="hover:bg-[#f3f3f3]">
-                      <td class="px-4 py-2">1</td>
-                      <td class="px-4 py-2">Sofia Clark</td>
-                      <td class="px-4 py-2">12345678A</td>
-                      <td class="px-4 py-2">555-123-4567</td>
-                      <td class="px-4 py-2">sofia.clark@email.com</td>
-                      <td class="px-4 py-2 flex justify-center gap-3">
-                        <span
-                          class="material-symbols-outlined text-blue-500 cursor-pointer"
-                          >edit</span
-                        >
-                        <span
-                          class="material-symbols-outlined text-red-500 cursor-pointer"
-                          >delete</span
-                        >
-                      </td>
-                    </tr>
-                    <tr class="hover:bg-[#f3f3f3]">
-                      <td class="px-4 py-2">2</td>
-                      <td class="px-4 py-2">Liam Walker</td>
-                      <td class="px-4 py-2">87654321B</td>
-                      <td class="px-4 py-2">555-987-6543</td>
-                      <td class="px-4 py-2">liam.walker@email.com</td>
-                      <td class="px-4 py-2 flex justify-center gap-3">
-                        <span
-                          class="material-symbols-outlined text-blue-500 cursor-pointer"
-                          >edit</span
-                        >
-                        <span
-                          class="material-symbols-outlined text-red-500 cursor-pointer"
-                          >delete</span
-                        >
-                      </td>
-                    </tr> -->
-                    <!-- Puedes duplicar las filas según lo necesites -->
-                  </tbody>
+                  <tbody class="divide-y"></tbody>
                 </table>
               </div>
             </div>
