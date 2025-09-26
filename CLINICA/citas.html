@@ -181,7 +181,7 @@
             Crear Nuevo Usuario
           </h2>
           <!-- Formulario -->
-          <form id="formCrearPaciente" class="space-y-4">
+          <form id="formCrearCitas" class="space-y-4">
             <!-- Nombre -->
             <div>
               <label
@@ -191,17 +191,13 @@
                 Paciente
               </label>
               <div class="relative">
-                <span
-                  class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-                >
-                  search
-                </span>
-                <input
-                  type="text"
+                
+                <select
                   id="paciente"
-                  placeholder="Buscar por ID o nombre del paciente"
-                  class="w-full pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition"
-                />
+                  class="w-full pl-3 pr-3 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition"
+                >
+                  <option value="">Selecciona un paciente</option>
+                </select>
               </div>
             </div>
 
@@ -260,17 +256,13 @@
               >
                 Odontólogo
               </label>
-              <select
+              <input
+                type="text"
                 id="odontologo"
-                class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition"
-              >
-                <option>Dr. Carlos Mendoza</option>
-                <option>Dr. Juan Pérez</option>
-                <option>Dra. Laura Gómez</option>
-              </select>
+                placeholder="Ingrese el odontologo"
+                class="w-full pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition"
+              />
             </div>
-
-            
 
             <!-- Botones -->
             <div class="flex justify-end gap-3 pt-4">
@@ -295,5 +287,6 @@
       </div>
     </section>
     <script src="Script.js"></script>
+    <script src="logicaCitas.js"></script>
   </body>
 </html>

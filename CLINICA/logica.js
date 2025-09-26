@@ -70,6 +70,7 @@ async function cargarPacientes() {
   }
 }
 
+
 async function editarPaciente(id) {
   const response = await fetch("./clinicaPhp/pacientes.php");
   const pacientes = await response.json();
