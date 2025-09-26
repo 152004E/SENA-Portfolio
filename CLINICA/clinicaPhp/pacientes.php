@@ -1,19 +1,28 @@
 <?php
 include "conexion.php";
 header("Content-Type: application/json");
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 
-
-$method = $_SERVER('REQUEST_METHOD');
+$method = $_SERVER['REQUEST_METHOD'];
 
 if ($method === "POST") {
-    $data = json_encode(file_get_contents("php://input"), true);
+    $data = json_decode(file_get_contents("php://input"), true);
 
+    if (!$data) {
+        echo json_encode([
+            "success" => false,
+            "error" => "No llegaron datos"
+        ]);
+        exit;
+    }
+    
     $nombre = $data["nombre"];
     $documento = $data["documento"];
     $telefono = $data["telefono"];
     $correo = $data["correo"];
 
-    $sql = "INSERT INTO pacientes (nombre,documento,telefono,correo) VALUES ($nombre,$documento,$telefono,$correo)";
+    $sql = "INSERT INTO pacientes (nombre,documento,telefono,correo) VALUES ('$nombre','$documento','$telefono','$correo')";
 
 
     if ($conexion->query($sql) === true) {
