@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+/* npx tailwindcss -i ./src/input.css -o ./src/output.css --watch */
 
 .links {
   @apply flex items-center my-2 gap-3 py-2 px-2 

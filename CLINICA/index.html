@@ -50,7 +50,7 @@
             </div>
             <div class="links">
               <span class="material-symbols-outlined">calendar_month</span>
-              <a class="w-full h-full" href="#">Citas</a>
+              <a class="w-full h-full" href="citas.html">Citas</a>
             </div>
             <div class="links">
               <span class="material-symbols-outlined">person</span>
@@ -112,7 +112,7 @@
                     Agregar Nuevo Paciente
                   </button>
                 </div>
-              </div>    
+              </div>
 
               <!-- Tabla -->
               <div
@@ -122,7 +122,7 @@
                   <thead class="bg-blue-500">
                     <tr>
                       <th
-                        class="px-2   py-2 text-center  text-sm font-medium text-white"
+                        class="px-2 py-2 text-center text-sm font-medium text-white"
                       >
                         ID
                       </th>
@@ -186,54 +186,94 @@
           <form id="formCrearPaciente" class="space-y-4">
             <!-- Nombre -->
             <div>
-              <label class="block text-sm font-medium text-gray-600"
-                >Nombre completo</label
+              <label
+                for="nombre"
+                class="block text-sm font-medium text-gray-600 mb-1"
               >
-              <input
-                type="text"
-                id="nombre"
-                placeholder="Ej: Juan Pérez"
-                class="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              />
+                Nombre completo
+              </label>
+              <div class="relative">
+                <span
+                  class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                >
+                  person
+                </span>
+                <input
+                  type="text"
+                  id="nombre"
+                  placeholder="Ej: Juan Pérez"
+                  class="w-full pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition"
+                />
+              </div>
             </div>
 
             <!-- Documento -->
             <div>
-              <label class="block text-sm font-medium text-gray-600"
-                >Documento</label
+              <label
+                for="documento"
+                class="block text-sm font-medium text-gray-600 mb-1"
               >
-              <input
-                type="text"
-                id="documento"
-                placeholder="Número de documento"
-                class="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              />
+                Documento
+              </label>
+              <div class="relative">
+                <span
+                  class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                >
+                  badge
+                </span>
+                <input
+                  type="text"
+                  id="documento"
+                  placeholder="Número de documento"
+                  class="w-full pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition"
+                />
+              </div>
             </div>
 
             <!-- Teléfono -->
             <div>
-              <label class="block text-sm font-medium text-gray-600"
-                >Teléfono</label
+              <label
+                for="telefono"
+                class="block text-sm font-medium text-gray-600 mb-1"
               >
-              <input
-                type="tel"
-                placeholder="Ej: 3001234567"
-                id="telefono"
-                class="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              />
+                Teléfono
+              </label>
+              <div class="relative">
+                <span
+                  class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                >
+                  call
+                </span>
+                <input
+                  type="tel"
+                  id="telefono"
+                  placeholder="Ej: 3001234567"
+                  class="w-full pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition"
+                />
+              </div>
             </div>
 
             <!-- Correo -->
             <div>
-              <label class="block text-sm font-medium text-gray-600"
-                >Correo electrónico</label
+              <label
+                for="correo"
+                class="block text-sm font-medium text-gray-600 mb-1"
               >
-              <input
-                type="email"
-                id="correo"
-                placeholder="correo@ejemplo.com"
-                class="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              />
+                Correo electrónico
+              </label>
+              <div class="relative">
+                <span
+                  class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                >
+                  mail
+                </span>
+                <input
+                  type="email"
+                  id="correo"
+                  placeholder="correo@ejemplo.com"
+                  class="w-full pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition"
+                />
+              </div>
             </div>
 
             <!-- Botones -->

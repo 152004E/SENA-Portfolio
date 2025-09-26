@@ -18,3 +18,11 @@ const modal = document.getElementById("modalCrearUsuario");
       modal.classList.add("hidden");
     }, 500); // mismo tiempo que la transición
   }
+
+  function abrirModalCitas() {
+    modal.classList.remove("hidden");
+    setTimeout(() => {
+      contenido.classList.remove("scale-95", "opacity-0");
+      contenido.classList.add("scale-100", "opacity-100");
+    }, 10);
+  }

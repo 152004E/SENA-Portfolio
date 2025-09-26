@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>clínica odontológica - Reyes Emerson</title>
+    <link href="./src/output.css" rel="stylesheet" />
+
+    <!--iconos-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+
+    <!--font-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--favicon-->
+    <link
+      rel="shortcut icon"
+      href="./image/DentalSoft.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body class="font-Outfit transition-all !duration-[3s]">
+    <!-- bg-[#d5d5d5] -->
+    <section
+      class="bg-gray-900 w-screen h-screen flex justify-center items-center"
+    >
+      <!-- bg-[#F8F9FA] -->
+      <div
+        class="bg-[#4d4d4d] flex w-[1300px] h-[800px] rounded-2xl overflow-hidden"
+      >
+        <div class="bg-white w-[300px] h-full border-r-2 border-gray-200">
+          <div
+            class="flex justify-center items-center border-b-2 border-gray-200"
+          >
+            <img
+              class="w-[160px] my-2"
+              src="./image/DentalSoltLogo.png"
+              alt="Imagen de la empresa"
+            />
+          </div>
+          <div class="flex flex-col ml-4 mr-3">
+            <div class="links">
+              <span class="material-symbols-outlined">dashboard</span>
+              <a class="w-full h-full" href="#">Panel</a>
+            </div>
+            <div class="links">
+              <span class="material-symbols-outlined">calendar_month</span>
+              <a class="w-full h-full" href="#">Citas</a>
+            </div>
+            <div class="links">
+              <span class="material-symbols-outlined">person</span>
+              <a class="w-full h-full" href="index.html">Pacientes</a>
+            </div>
+            <div class="links">
+              <span class="material-symbols-outlined">receipt_long</span>
+              <a class="w-full h-full" href="#">Facturación</a>
+            </div>
+            <div class="links">
+              <span class="material-symbols-outlined">bar_chart</span>
+              <a class="w-full h-full" href="#">Informes</a>
+            </div>
+          </div>
+        </div>
+
+        <!--segundo espacio-->
+
+        <div class="bg-white w-full h-full">
+          <div class="flex items-center border-b-2 border-gray-200">
+            <h2 class="text-3xl tracking-wide my-[14px] ml-3 uppercase">
+              Gestion de Citas
+            </h2>
+          </div>
+          <div class="flex flex-col">
+            <div
+              class="w-[1000px] flex items-center justify-between mx-auto p-6"
+            >
+              <!-- Barra de búsqueda y botones -->
+              <div class="flex flex-wrap gap-3">
+                <select
+                  class="bg-white border border-gray-300 rounded-lg px-3 py-2 shadow-sm text-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition"
+                >
+                  <option value="">Fecha</option>
+                </select>
+
+                <select
+                  class="bg-white border border-gray-300 rounded-lg px-3 py-2 shadow-sm text-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition"
+                >
+                  <option value="">Estado</option>
+                  <option value="">Pendiente</option>
+                  <option value="">Cancelada</option>
+                  <option value="">Confirmada</option>
+                </select>
+
+                <select
+                  class="bg-white border border-gray-300 rounded-lg px-3 py-2 shadow-sm text-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition"
+                >
+                  <option value="">Dentista</option>
+                </select>
+              </div>
+
+              <!-- Filtros -->
+              <div class="flex gap-2">
+                <button
+                  onclick="cargarCitas()"
+                  class="px-4 py-2 border rounded-md bg-white hover:bg-gray-500 hover:text-white cursor-pointer transition-all duration-[1s] hover:scale-[1.06]"
+                >
+                  Todos las Citas
+                </button>
+
+                <!-- Botón agregar -->
+                <button
+                  onclick="abrirModalCitas()"
+                  class="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-gradient-to-r hover:from-[#0da5d6] hover:to-[#00f2fe] cursor-pointer transition-all duration-900 hover:scale-[1.06]"
+                >
+                  <span class="material-symbols-outlined">add</span>
+                  Agregar Nueva Cita
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Fichas para las citas -->
+          <div class="w-full h-full overflow-auto p-6">
+            <!--ficha-->
+            <div
+              class="bg-[#f3f3f3] w-[200px] h-[170px] rounded-2xl overflow-hidden shadow-2xl shadow-black/50"
+            >
+              <div class="w-full h-[90px] bg-amber-200">
+                <div class="flex justify-between items-center p-3">
+                  <span
+                    class="material-symbols-outlined"
+                    style="
+                      font-size: 40px;
+                      line-height: 1;
+                      vertical-align: middle;
+                    "
+                    >person</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-blue-500 cursor-pointer hover:text-black transition-all duration-[1s]"
+                    onclick="editarCita()"
+                  >
+                    edit
+                  </span>
+                </div>
+              </div>
+              <div class="ml-4">
+                <div class="flex gap-2"></div>
+                <p>Jose Reyes</p>
+                <p class="text-[14px]">fecha</p>
+                <p class="text-[14px]">doctor</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <!-- Formulario -->
+      <div
+        id="modalCrearUsuario"
+        class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50"
+      >
+        <div
+          id="contenidoModal"
+          class="bg-white rounded-xl shadow-lg w-full max-w-lg p-6 relative transform scale-95 opacity-0 transition-all duration-500"
+        >
+          <!-- Cerrar modal -->
+          <button
+            onclick="cerrarModal()"
+            class="absolute top-3 right-3 text-gray-500 hover:text-blue-500 cursor-pointer transition-all duration-300"
+          >
+            ✖
+          </button>
+          <!-- Título -->
+          <h2 class="text-xl font-bold mb-4 text-gray-700">
+            Crear Nuevo Usuario
+          </h2>
+          <!-- Formulario -->
+          <form id="formCrearPaciente" class="space-y-4">
+        <!-- Nombre -->
+        <div>
+          <label
+            for="nombre"
+            class="block text-sm font-medium text-gray-600 mb-1"
+          >
+            Nombre completo
+          </label>
+          <div class="relative">
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+            >
+              person
+            </span>
+            <input
+              type="text"
+              id="nombre"
+              placeholder="Ej: Juan Pérez"
+              class="w-full pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition"
+            />
+          </div>
+        </div>
+
+        <!-- Documento -->
+        <div>
+          <label
+            for="documento"
+            class="block text-sm font-medium text-gray-600 mb-1"
+          >
+            Documento
+          </label>
+          <div class="relative">
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+            >
+              badge
+            </span>
+            <input
+              type="text"
+              id="documento"
+              placeholder="Número de documento"
+              class="w-full pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition"
+            />
+          </div>
+        </div>
+
+        <!-- Teléfono -->
+        <div>
+          <label
+            for="telefono"
+            class="block text-sm font-medium text-gray-600 mb-1"
+          >
+            Teléfono
+          </label>
+          <div class="relative">
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+            >
+              call
+            </span>
+            <input
+              type="tel"
+              id="telefono"
+              placeholder="Ej: 3001234567"
+              class="w-full pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition"
+            />
+          </div>
+        </div>
+
+        <!-- Correo -->
+        <div>
+          <label
+            for="correo"
+            class="block text-sm font-medium text-gray-600 mb-1"
+          >
+            Correo electrónico
+          </label>
+          <div class="relative">
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+            >
+              mail
+            </span>
+            <input
+              type="email"
+              id="correo"
+              placeholder="correo@ejemplo.com"
+              class="w-full pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition"
+            />
+          </div>
+        </div>
+
+        <!-- Botones -->
+        <div class="flex justify-end gap-3 pt-4">
+          <button
+            type="button"
+            onclick="cerrarModal()"
+            class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-500 hover:text-white cursor-pointer transition-all duration-300 hover:scale-[1.06]"
+          >
+            Cancelar
+          </button>
+          <button
+            type="submit"
+            class="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-gradient-to-r hover:from-[#0da5d6] hover:to-[#00f2fe] cursor-pointer transition-all duration-500 hover:scale-[1.06]"
+          >
+            Guardar
+          </button>
+        </div>
+      </form>
+        </div>
+      </div>
+      
+    </section>
+    <script src="Script.js"></script>
+  </body>
+</html>

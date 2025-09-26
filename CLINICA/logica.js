@@ -108,7 +108,13 @@ async function editarPaciente(id) {
 }
 
 async function eliminarPaciente(id) {
-  if (!confirm("Seguro que deseas eliminar este paciente?"));
+  const confirmar = confirm(
+    "¿Estás seguro de que quieres eliminar este paciente?"
+  );
+  if (!confirmar) {
+    console.log("Cancelado por el usuario");
+    return; // <- ESTA LÍNEA es la que evita que siga
+  }
   try {
     const response = await fetch("./clinicaPhp/pacientes.php", {
       method: "DELETE",

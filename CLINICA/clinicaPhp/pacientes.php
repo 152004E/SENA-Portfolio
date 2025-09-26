@@ -16,7 +16,7 @@ if ($method === "POST") {
         ]);
         exit;
     }
-    
+
     $nombre = $data["nombre"];
     $documento = $data["documento"];
     $telefono = $data["telefono"];
@@ -80,7 +80,17 @@ if ($method === "PUT") {
 
 if ($method === "DELETE") {
     $data = json_decode(file_get_contents("php://input"), true);
-    $id = $data["id"];
+
+    // Validar que venga el id
+    if (!isset($data["id"]) || !is_numeric($data["id"])) {
+        echo json_encode([
+            "success" => false,
+            "error" => "ID inválido o no enviado"
+        ]);
+        exit;
+    }
+
+    $id = intval($data["id"]); // Sanitiza a número entero
     $sql = "DELETE FROM pacientes WHERE id=$id";
 
     if ($conexion->query($sql) === true) {
