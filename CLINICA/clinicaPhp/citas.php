@@ -103,3 +103,28 @@ if ($method === "PUT") {
     $conexion->close();
     exit;
 }
+if ($method === "DELETE") {
+    $data = json_decode(file_get_contents("php://input"), true);
+
+    if (!$data || !isset($data["id"])) {
+        echo json_encode(["success" => false, "error" => "Falta el ID de la cita"]);
+        exit;
+    }
+
+    $id = intval($data["id"]);
+
+    $stmt = $conexion->prepare("DELETE FROM citas WHERE id = ?");
+    $stmt->bind_param("i", $id);
+
+    if ($stmt->execute()) {
+        echo json_encode(["success" => true, "message" => "Cita eliminada correctamente"]);
+    } else {
+        echo json_encode(["success" => false, "error" => $stmt->error]);
+    }
+
+    $stmt->close();
+    $conexion->close();
+    exit;
+}
+
+
