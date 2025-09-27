@@ -53,3 +53,53 @@ if ($method === "POST") {
     $conexion->close();
     exit;
 }
+$method = $_SERVER['REQUEST_METHOD'];
+
+if ($method === "GET") {
+    $result = $conexion->query("
+        SELECT c.id, c.fecha, c.hora, c.odontologo, c.estado,
+               p.nombre AS paciente
+        FROM citas c
+        INNER JOIN pacientes p ON p.id = c.paciente_id
+    ");
+
+    $citas = [];
+    while ($row = $result->fetch_assoc()) {
+        $citas[] = $row;
+    }
+
+    echo json_encode($citas);
+    exit;
+}
+if ($method === "PUT") {
+    $data = json_decode(file_get_contents("php://input"), true);
+
+    if (!$data || !isset($data["id"])) {
+        echo json_encode(["success" => false, "error" => "Faltan datos"]);
+        exit;
+    }
+
+    $id = intval($data["id"]);
+    $fecha = $data["fecha"] ?? null;
+    $hora = $data["hora"] ?? null;
+    $odontologo = $data["odontologo"] ?? null;
+    $estado = $data["estado"] ?? "pendiente";
+
+    if (!$fecha || !$hora || !$odontologo) {
+        echo json_encode(["success" => false, "error" => "Faltan datos obligatorios"]);
+        exit;
+    }
+
+    $stmt = $conexion->prepare("UPDATE citas SET fecha = ?, hora = ?, odontologo = ?, estado = ? WHERE id = ?");
+    $stmt->bind_param("ssssi", $fecha, $hora, $odontologo, $estado, $id);
+
+    if ($stmt->execute()) {
+        echo json_encode(["success" => true, "message" => "Cita actualizada correctamente"]);
+    } else {
+        echo json_encode(["success" => false, "error" => $stmt->error]);
+    }
+
+    $stmt->close();
+    $conexion->close();
+    exit;
+}
