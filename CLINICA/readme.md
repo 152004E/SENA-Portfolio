@@ -12,3 +12,13 @@ npm install react-native-screens react-native-safe-area-context react-native-ges
 
 # 3. Instalar las Tabs (navegación inferior)
 npm install @react-navigation/bottom-tabs
+
+
+📂 src/ → Carpeta principal donde vive todo el código de tu app.
+  📂 api/ → Aquí centralizamos las funciones para llamar a tu backend (Axios, fetch, etc.).
+    📄 api.js → Aquí van funciones como obtenerPacientes, crearPaciente, eliminarPaciente, etc.
+  📂 components/ → Componentes reutilizables, por ejemplo, un CardPaciente, un FormularioCita, etc.
+  📂 screens/ → Todas las pantallas de la app.
+    📄 pacientesScreen.js → Pantalla donde listamos y gestionamos pacientes (CRUD).
+    📄 citasScreen.js → Pantalla donde listamos y gestionamos citas (CRUD).
+```
