@@ -92,10 +92,14 @@ export default function CitasScreen() {
   const confirmarEliminar = (id, paciente) => {
     console.log("🔵 Confirmar eliminar cita ID:", id);
 
-    const confirmado = confirm(`¿Eliminar la cita de ${paciente}?`);
-    if (confirmado) {
-      eliminar(id);
-    }
+    Alert.alert("Confirmar eliminación", `¿Eliminar la cita de ${paciente}?`, [
+      { text: "Cancelar", style: "cancel" },
+      {
+        text: "Eliminar",
+        style: "destructive",
+        onPress: () => eliminar(id),
+      },
+    ]);
   };
 
   const eliminar = async (id) => {
@@ -535,7 +539,7 @@ const styles = StyleSheet.create({
   filtroActivo: {
     backgroundColor: "#007AFF",
     height: 40, // ← Altura fija para el filtro activo
-     paddingVertical: 20,// ← Quitar el padding vertical para usar solo height
+    paddingVertical: 20, // ← Quitar el padding vertical para usar solo height
   },
   filtroText: {
     fontSize: 13,
