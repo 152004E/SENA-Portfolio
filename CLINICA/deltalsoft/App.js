@@ -1,6 +1,7 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import CitasScreen from "./src/screens/CitasScreen";
 import PacientesScreen from "./src/screens/PacientesScreen";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -14,7 +15,9 @@ export default function App() {
         screenOptions={({ route }) => ({
           tabBarIcon: ({ color, size }) => {
             let iconName;
-            if (route.name === "Pacientes") {
+            if (route.name === "Citas") {
+              iconName = "calendar-outline";
+            } else if (route.name === "Pacientes") {
               iconName = "people-outline";
             }
             return <Ionicons name={iconName} size={size} color={color} />;
@@ -25,6 +28,7 @@ export default function App() {
         })}
       >
         <Tab.Screen name="Pacientes" component={PacientesScreen} />
+        <Tab.Screen name="Citas" component={CitasScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
