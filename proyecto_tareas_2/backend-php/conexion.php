@@ -8,7 +8,7 @@ $password = "";
 $base_Datos = "tareas_db";
 $puerto = 33065;
 try {
-    $conexion = new mysqli($servidor, $usuario, $contrasena, $base_datos);
+    $conexion = new mysqli($servidor, $usuario, $contrasena, $base_datos,$puerto);
     if ($conexion->connect_error) {
         throw new Exception("Error de conexión: " . $conexion->connect_error);
         $conexion->set_charset("utf8");
