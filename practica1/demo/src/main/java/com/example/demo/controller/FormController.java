@@ -32,8 +32,8 @@ public class FormController {
         String res = persona.Registrar(nombre,correo,telefono);
     
         if(res == "1"){        
-            String remitente = ""; // Cuenta de correo Gmail
-            String password = ""; // Contraseña de aplicaciones 
+            String remitente = "er293116@gmail.com"; // Cuenta de correo Gmail
+            String password = "adnw jqag dzgs zjyf"; // Contraseña de aplicaciones 
 
             // Configuración del servidor SMTP de Gmail
             Properties props = new Properties();
