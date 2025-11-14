@@ -28,7 +28,7 @@ namespace miPrimerApiRestfull.service
         {
             var listaDePiloto = _pilotos.Where(x => x.Id == id && x.Nombre == nombre).ToList();
 
-            return listaDePiloto;
+            return listaDePiloto; 
         }
     }
 }
