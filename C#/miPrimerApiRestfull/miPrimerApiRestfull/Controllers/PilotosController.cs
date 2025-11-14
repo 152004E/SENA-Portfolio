@@ -22,7 +22,7 @@ namespace miPrimerApiRestfull.Controllers
         }
 
         [HttpPost]
-        public IActionResult crear(Pilotos piloto) {
+        public IActionResult crear(Pilotos piloto) { 
             _pilotoservice.CrearPiloto(piloto);
             
             return Created();
