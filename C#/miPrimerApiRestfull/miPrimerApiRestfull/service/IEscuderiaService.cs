@@ -9,6 +9,8 @@ namespace miPrimerApiRestfull.service
 
         void CrearEscuderia(Escuderias escuderias);
 
+        List<Escuderias> GetEscuderiasPorPais(string pais);
+
 
 
     }

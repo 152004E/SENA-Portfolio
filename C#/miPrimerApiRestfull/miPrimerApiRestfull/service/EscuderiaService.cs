@@ -24,15 +24,20 @@ namespace miPrimerApiRestfull.service
 
         public Escuderias GetEscuderiasById(int id)
         {
-            return _escuderias.Where(x => x.Id == id).FirstOrDefault();
+            var resultado = _escuderias.Where(x => x.Id == id).FirstOrDefault();
+            return resultado;
         }
         public void CrearEscuderia(Escuderias escuderias)
         {
             _escuderias.Add(escuderias);
         }
 
-        
-
+        public List<Escuderias> GetEscuderiasPorPais(string pais)
+        {
+            var resultado = _escuderias.Where(e => e.Pais.ToLower() == pais.ToLower()).ToList();
+            return resultado;
+            
+        }
     }
 }
 

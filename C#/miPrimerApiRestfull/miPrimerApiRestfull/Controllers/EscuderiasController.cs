@@ -42,8 +42,22 @@ namespace miPrimerApiRestfull.Controllers
 
         public IActionResult crear(Escuderias escuderia) {
             _escuderiaService.CrearEscuderia(escuderia);
-                
+
             return Created();
+        }
+
+        [HttpGet("Pais/{pais}")]
+
+        public IActionResult GetEscuderiasPorPais(string pais) {
+            var escuderias = _escuderiaService.GetEscuderiasPorPais(pais);
+            if (escuderias == null)
+            {
+                return NotFound($"No se encontro escuderias en {pais}");
+            }
+
+
+            return Ok(escuderias); 
+        
         }
 
 
