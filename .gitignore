@@ -1,3 +1,6 @@
+# ---------------------------------------
+# ARCHIVOS / CARPETAS DE ANDROID / GRADLE
+# ---------------------------------------
 *.iml
 .gradle
 /local.properties
@@ -13,18 +16,23 @@
 .externalNativeBuild
 .cxx
 local.properties
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
-# dependencies
+# ---------------------------------------
+# NODE DEPENDENCIES
+# ---------------------------------------
 node_modules/
 
-# Expo
+# ---------------------------------------
+# EXPO
+# ---------------------------------------
 .expo/
 dist/
 web-build/
 expo-env.d.ts
 
-# Native
+# ---------------------------------------
+# NATIVO (IOS / ANDROID KEYS)
+# ---------------------------------------
 .kotlin/
 *.orig.*
 *.jks
@@ -33,25 +41,95 @@ expo-env.d.ts
 *.key
 *.mobileprovision
 
-# Metro
+# ---------------------------------------
+# METRO
+# ---------------------------------------
 .metro-health-check*
 
-# debug
+# ---------------------------------------
+# LOGS
+# ---------------------------------------
 npm-debug.*
 yarn-debug.*
 yarn-error.*
 
-# macOS
+# ---------------------------------------
+# MACOS
+# ---------------------------------------
 .DS_Store
 *.pem
 
-# local env files
+# ---------------------------------------
+# ENV VARIABLES
+# ---------------------------------------
 .env*.local
 
-# typescript
+# ---------------------------------------
+# TYPESCRIPT
+# ---------------------------------------
 *.tsbuildinfo
 
-# VS Code
+# ---------------------------------------
+# VS CODE
+# ---------------------------------------
 .vscode/
 
 app-example
+
+# =======================================
+#     AQUI EMPIEZA LO DE C# / .NET
+# =======================================
+
+# Compiled binaries
+bin/
+obj/
+
+# Visual Studio files
+*.user
+*.suo
+*.cache
+*.pdb
+
+# Build artifacts
+*.exe
+*.dll
+*.dbmdl
+
+# Publish folder
+/publish/
+/wwwroot/dist/
+/wwwroot/build/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Resharper / Rider
+_ReSharper*/
+*.DotSettings.user
+
+# SQL database local
+*.mdf
+*.ldf
+
+# Visual Studio backup files
+*.bak
+*.tmp
+
+# NuGet Packages
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# DotNet Tools
+.dotnet/
+
+# Logs
+*.log
+
+# VS 2022 metadata
+.vs/
+
+# Azure
+.azure/

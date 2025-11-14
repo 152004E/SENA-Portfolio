@@ -1,0 +1,6 @@
+@miPrimerApiRestfull_HostAddress = http://localhost:5195
+
+GET {{miPrimerApiRestfull_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
