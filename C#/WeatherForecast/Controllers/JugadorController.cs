@@ -76,7 +76,7 @@ namespace WebApplicationConDB.Controllers
             return Ok("jugador actualizado exitosamente");
         }
 
-        [HttpDelete("{id:int}")]
+         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {
             var eliminado = _jugadorService.Delete(id);

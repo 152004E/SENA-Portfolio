@@ -7,102 +7,93 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ChessProject.Models;
 using WebApplicationConDB.Data;
+using WebApplicationConDB.Services;
 
 namespace WebApplicationConDB.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Partidas")]
     [ApiController]
     public class PartidasController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly IPartidaService _partidaservice;
 
-        public PartidasController(AppDbContext context)
+        public PartidasController(IPartidaService partidaservice)
         {
-            _context = context;
+            _partidaservice = partidaservice;
         }
+
+
 
         // GET: api/Partidas
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Partida>>> GetPartidas()
+        public IActionResult GetAll()
         {
-            return await _context.Partidas.ToListAsync();
+            var partida = _partidaservice.GetAll();
+            return Ok(partida);
+        }
+        [HttpPost]
+        public IActionResult Create([FromBody] Partida partida)
+        {
+            _partidaservice.Create(partida);
+            return Ok("Partida creada exitosamente");
         }
 
         // GET: api/Partidas/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Partida>> GetPartida(int id)
+        [HttpGet("{id:int}")]
+        public IActionResult GetById(int id)
         {
-            var partida = await _context.Partidas.FindAsync(id);
+            var partida = _partidaservice.GetById(id);
 
             if (partida == null)
             {
-                return NotFound();
+                return NotFound($"Partida no encontra por el id : {id}");
             }
 
-            return partida;
+            return Ok(partida);
         }
+        // GET: api/Partidas/5 por tipo de partida
+        [HttpGet("TipoPartida/{TipoPartida}")]
+        public IActionResult TipoPartida(string TipoPartida)
+        {
+            var partida = _partidaservice.TipoPartida(TipoPartida);
 
+            if (partida == null || partida.Count == 0)
+            {
+                return NotFound($"Pardia no encontra por el id : {TipoPartida}");
+            }
+
+            return Ok(partida);
+        }
         // PUT: api/Partidas/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutPartida(int id, Partida partida)
+        [HttpPut("{id:int}")]
+        public IActionResult Update(int id,[FromBody] Partida partida)
         {
-            if (id != partida.PartidaId)
-            {
-                return BadRequest();
-            }
+            var partidaactual = _partidaservice.Update(id, partida);
 
-            _context.Entry(partida).State = EntityState.Modified;
-
-            try
+            if (!partidaactual)
             {
-                await _context.SaveChangesAsync();
+                return NotFound($"No se encontraron partidas por el id : {id}");
             }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PartidaExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            return Ok("La partida actualizada exitasamente.");
+            
         }
 
-        // POST: api/Partidas
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Partida>> PostPartida(Partida partida)
-        {
-            _context.Partidas.Add(partida);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetPartida", new { id = partida.PartidaId }, partida);
-        }
+        
 
         // DELETE: api/Partidas/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePartida(int id)
+        
+        [HttpDelete("{id:int}")]
+        public IActionResult Delete(int id)
         {
-            var partida = await _context.Partidas.FindAsync(id);
-            if (partida == null)
+            var elimidano = _partidaservice.Delete(id);
+            if (!elimidano)
             {
-                return NotFound();
+                return NotFound($"No se encontraron partidas por el id : {id}");
             }
-
-            _context.Partidas.Remove(partida);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
+            return Ok("La partida se elimino exisamente");
         }
 
-        private bool PartidaExists(int id)
-        {
-            return _context.Partidas.Any(e => e.PartidaId == id);
-        }
+        
+        
     }
 }

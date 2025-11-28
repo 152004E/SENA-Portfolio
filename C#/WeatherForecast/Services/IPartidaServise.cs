@@ -2,13 +2,15 @@
 
 namespace WebApplicationConDB.Services
 {
-    public interface IPartidaServise
+    public interface IPartidaService
     {
         List<Partida> GetAll();
 
-        Partida getById(int id);
+        Partida GetById(int id);
 
         void Create(Partida partida);
+        bool Update(int id, Partida partida);
+        bool Delete(int id);
         List<Partida> TipoPartida(string TipoPartida);
     }
 }
