@@ -4,11 +4,10 @@ namespace WebApplicationConDB.Services
 {
     public interface IMovimientosService
     {
-        List<Movimiento> GetAll();
-
-        Movimiento getById(int id);
-
+        List<Movimiento> GetMovimientos();
         void Create(Movimiento movimiento);
-        List<Movimiento> GetPorcolor(string Color);
+        Movimiento GetById(int id);
+        bool Update(int id, Movimiento movimiento);
+        bool Delete(int id);
     }
 }

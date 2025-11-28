@@ -48,6 +48,7 @@ namespace WebApplicationConDB.Services
             actual.Ganador = partida.Ganador;
             actual.JugadorBlancasId = partida.JugadorBlancasId;
             actual.JugadorNegrasId = partida.JugadorNegrasId;
+            actual.MotivoFin = partida.MotivoFin;
             _context.SaveChanges();
             return true;
         }

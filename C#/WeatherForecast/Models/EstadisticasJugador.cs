@@ -7,7 +7,7 @@ namespace ChessProject.Models
     public class EstadisticasJugador
     {
         [Key]
-        public int Id { get; set; }
+        public int EstadisticasJugadorId { get; set; }
         public int JugadorId { get; set; }
         public int PartidasJugadas { get; set; }
         public int Victorias { get; set; }

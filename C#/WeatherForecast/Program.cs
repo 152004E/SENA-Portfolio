@@ -14,6 +14,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IJugadorService, JugadorService>();
 builder.Services.AddScoped<IPartidaService, PartidaService>();
+builder.Services.AddScoped<IMovimientosService, MovimientoService>();
+builder.Services.AddScoped<IEstadisticasJugadorService, EstadisticasJugadorService>(); 
+
 
 builder.Services.AddDbContext<AppDbContext>(options =>
        options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))

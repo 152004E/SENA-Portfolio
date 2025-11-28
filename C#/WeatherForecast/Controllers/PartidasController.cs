@@ -31,6 +31,8 @@ namespace WebApplicationConDB.Controllers
             var partida = _partidaservice.GetAll();
             return Ok(partida);
         }
+
+        //Creacion de una partida
         [HttpPost]
         public IActionResult Create([FromBody] Partida partida)
         {
